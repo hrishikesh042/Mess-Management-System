@@ -1,0 +1,11 @@
+asgiref==3.5.1
+Django==4.0.4
+django-crispy-forms==1.14.0
+django-filter==21.1
+Pillow==9.1.0
+pydot==1.4.2
+pyparsing==3.0.9
+sqlparse==0.4.2
+tzdata==2022.1
+
+pip install -r requirement.txt

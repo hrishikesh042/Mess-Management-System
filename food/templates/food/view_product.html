@@ -1,0 +1,179 @@
+{% block view_prod%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> [Data - Table] </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"> {% comment %} ANCHOR
+    - Adding DataTable style CDN {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> {% comment %} ANCHOR - Adding JQuery CDN
+    {% endcomment %}
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script> {% comment %} ANCHOR - Adding
+    DataTable CDN {% endcomment %}
+
+    <script>    {% comment %} ANCHOR - Initializing DataTable {% endcomment %}
+        // $(document).ready( function () {
+        // $('#example').DataTable();
+        // } );
+
+        $(document).ready(function () {
+            var table = $('#example').DataTable({
+                stateSave: true,
+                // dom: 'Bfrtip',
+                // buttons: [ 'copy', 'csv', 'excel', 'pdf', 'print' ]
+                // dom: '<"top"f>rt<"bottom"lip>< "clear" > ',
+                // scrollY: '200px',
+                // paging: false,
+                // ordering: true,
+                // info: false,
+                // order: [[3, 'desc']], // 0,1,2, '3' is in desending order
+            });
+
+            $('a.toggle-vis').on('click', function (e) {
+                e.preventDefault();
+
+                // Get the column API object
+                var column = table.column($(this).attr('data-column'));
+
+                // Toggle the visibility
+                column.visible(!column.visible());
+            });
+
+            $('#example tbody').on('mouseenter', 'td', function () {
+                var colIdx = table.cell(this).index().column;
+
+                $(table.cells().nodes()).removeClass('highlight');
+                $(table.column(colIdx).nodes()).addClass('highlight');
+            });
+        });
+    </script>
+
+</head>
+
+<body >
+
+    {% load static %}
+    {% comment %} {% include 'NavBar.html' %} {% endcomment %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        {% if not user.is_staff %}
+        <a class="navbar-brand" href="{% url 'menu' %}">
+            <img src="{% static 'images/logo.jpg' %}" style="width:40px" class="img-responsive" />Canteen</a>
+        {% else %}
+        <a class="navbar-brand" href="{% url 'dashboard' %}">
+            <img src="{% static 'images/logo.jpg' %}" style="width:40px" class="img-responsive" />Canteen</a>
+        {% endif %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    {% if not user.is_staff %}
+                    <a class="nav-link" href="{% url 'menu' %}">Home <span class="sr-only">(current)</span></a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>
+                    {%endif%}
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                {% if user.is_authenticated %}
+                <span class='msg' style="color:white;font-size:20px">Hello, {{request.user}}&nbsp&nbsp</span>
+                <a href="{% url 'logout' %}" class="butn my-2 my-sm-0 btn btn-danger">Logout</a>
+                {% else %}
+                <a href="{% url 'register' %}" class="butn mr-sm-2 btn btn-danger">Register</a>
+                <a href="{% url 'login' %}" class="butn my-2 my-sm-0">Login</a>
+                {% endif %}
+                {% if not user.is_staff %}
+                <a href="{% url 'cart'  %}">
+                    <img id="cart-icon" src="{% static 'images/cart.png' %}" />
+                </a>
+                <p id="cart-total">{{cartItems}}</p>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <div style="padding:20px">
+    <hr>
+    <a style="color:black;font-size:25px;font-weight:bold">
+        Toggle column:
+    </a>
+    <div class="col-12"><br>
+        <div class="row">
+            <div class="col-2"><button class="btn btn-primary"><a style="color:white;" class="toggle-vis"
+                        data-column="0"> Product
+                    </a></button> </div>
+            <div class="col-2"><button class="btn btn-primary"><a style="color:white;" class="toggle-vis"
+                        data-column="1"> Price
+                    </a></button></div>
+            <div class="col-2"><button class="btn btn-primary"><a style="color:white;" class="toggle-vis"
+                        data-column="2"> Category
+                    </a></button> </div>
+            <div class="col-2"><button class="btn btn-primary"><a style="color:white;" class="toggle-vis"
+                        data-column="3"> Image
+                    </a></button> </div>
+            <div class="col-2"><button class="btn btn-primary"><a style="color:white;" class="toggle-vis"
+                        data-column="4"> Update
+                    </a></button></div>
+            <div class="col-2"><button class="btn btn-primary"><a style="color:white;" class="toggle-vis"
+                        data-column="5"> Remove
+                    </a></button></div>
+        </div>
+    </div>
+    <hr>
+    <!-- <table id="example" class="display row-border hover order-column" style="width:100%"> -->
+    <table id="example" class="row-border hover order-column" style="width:100%">
+        <thead>
+            <tr>
+                <th> Product </th>
+                <th> Price </th>
+                <th> Category </th>
+                <th> Image </th>
+                <th> Update </th>
+                <th> Remove </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products  %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category}}</td>
+                <td style="max-width:20px; max-height:20px;"><img style="max-width:50%" src="{{product.ImageURL}}"></td>
+                <td><a class="btn btn-sm btn-warning" href="{% url 'update_product' product.id %}">Update</a> </td>
+                <td><a class="btn btn-sm btn-danger" href="{% url 'delete_product' product.id %}">Delete</a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th> Product </th>
+                <th> Price </th>
+                <th> Category </th>
+                <th> Image </th>
+                <th> Update </th>
+                <th> Remove </th>
+            </tr>
+        </tfoot>
+    </table>
+
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags %}
+    <script>alert("{{ message }}")</script>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+</div>
+</body>
+
+</html>
+{% endblock %}

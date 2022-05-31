@@ -1,0 +1,161 @@
+canteen                                                                                     
+├─ Accounts                                                                                 
+│  ├─ migrations                                                                                                                                               
+│  ├─ admin.py                                                                              
+│  ├─ apps.py                                                                               
+│  ├─ models.py                                                                             
+│  ├─ tests.py                                                                              
+│  ├─ urls.py                                                                               
+│  ├─ views.py                                                                              
+│  └─ __init__.py                                                                           
+├─ canteen                                                                                  
+│  ├─ __pycache__                                                                           
+│  ├─ asgi.py                                                                               
+│  ├─ settings.py                                                                           
+│  ├─ urls.py                                                                               
+│  ├─ wsgi.py                                                                               
+│  └─ __init__.py                                                                           
+├─ env                                                                                      
+│  ├─ Include                                                                               
+│  ├─ Lib                                                                                   
+│  │  └─ site-packages                                                                      
+│  │     ├─ asgiref                                                                         
+│  │     ├─ asgiref-3.5.1.dist-info                                                         \
+│  │     ├─ crispy_forms                                                                    
+│  │     ├─ Django-4.0.4.dist-info                                                          
+│  │     ├─ django_crispy_forms-1.14.0.dist-info                                            
+│  │     ├─ django_filter-21.1.dist-info                                                    
+│  │     ├─ django_filters                                                                  
+│  │     ├─ PIL                                                                             
+│  │     ├─ Pillow-9.1.0.dist-info                                                          
+│  │     ├─ pip                                                                             
+│  │     ├─ pip-22.0.4.dist-info                                                            
+│  │     ├─ pkg_resources                                                                   
+│  │     ├─ pydot-1.4.2.dist-info                                                           
+│  │     ├─ pyparsing                                                                       
+│  │     ├─ pyparsing-3.0.9.dist-info                                                       
+│  │     ├─ setuptools                                                                      
+│  │     ├─ setuptools-58.1.0.dist-info                                                     
+│  │     ├─ sqlparse                                                                        
+│  │     ├─ sqlparse-0.4.2.dist-info                                                        
+│  │     ├─ tzdata                                                                          
+│  │     ├─ tzdata-2022.1.dist-info                                                         
+│  │     ├─ _distutils_hack                                                                 
+│  │     ├─ __pycache__                                                                     
+│  │     ├─ ~ip                                                                             
+│  │     ├─ ~ip-22.0.4.dist-info                                                            
+│  │     ├─ distutils-precedence.pth                                                        
+│  │     ├─ dot_parser.py                                                                   
+│  │     └─ pydot.py                                                                        
+│  ├─ Scripts                                                                               
+│  │  ├─ activate                                                                           
+│  │  ├─ activate.bat                                                                       
+│  │  ├─ Activate.ps1                                                                       
+│  │  ├─ deactivate.bat                                                                     
+│  │  ├─ django-admin.exe                                                                   
+│  │  ├─ pip.exe                                                                            
+│  │  ├─ pip3.10.exe                                                                        
+│  │  ├─ pip3.exe                                                                           
+│  │  ├─ python.exe                                                                         
+│  │  ├─ pythonw.exe                                                                        
+│  │  ├─ pythonw_d.exe                                                                      
+│  │  ├─ python_d.exe                                                                       
+│  │  └─ sqlformat.exe                                                                      
+│  └─ pyvenv.cfg                                                                            
+├─ food                                                                                     
+│  ├─ migrations                                                                            
+│  ├─ templates                                                                             
+│  │  ├─ food                                                                               
+│  │  │  ├─ beefree-mpx6m4kvumj                                                             
+│  │  │  │  ├─ images                                                                       
+│  │  │  │  │  ├─ bee.png                                                                   
+│  │  │  │  │  ├─ facebook2x.png                                                            
+│  │  │  │  │  ├─ lock5.png                                                                 
+│  │  │  │  │  ├─ ResetPassword_BG_2.png                                                    
+│  │  │  │  │  ├─ twitter2x.png                                                             
+│  │  │  │  │  └─ yourlogopassword.png                                                      
+│  │  │  │  └─ Forgot Pass.html                                                             
+│  │  │  ├─ add_product.html                                                                
+│  │  │  ├─ beefree-mpx6m4kvumj.zip                                                         
+│  │  │  ├─ breakfast.html                                                                  
+│  │  │  ├─ cancel_order.html                                                               
+│  │  │  ├─ cart.html                                                                       
+│  │  │  ├─ checkout.html                                                                   
+│  │  │  ├─ create_order.html                                                               
+│  │  │  ├─ customer.html                                                                   
+│  │  │  ├─ customer_update.html                                                            
+│  │  │  ├─ dashboard.html                                                                  
+│  │  │  ├─ delete_product.html                                                             
+│  │  │  ├─ dinner.html                                                                     
+│  │  │  ├─ Forgot_Pass.html                                                                
+│  │  │  ├─ login.html                                                                      
+│  │  │  ├─ lunch.html                                                                      
+│  │  │  ├─ main.html                                                                       
+│  │  │  ├─ menu.html                                                                       
+│  │  │  ├─ NavBar.html                                                                     
+│  │  │  ├─ outer.html                                                                      
+│  │  │  ├─ register.html                                                                   
+│  │  │  ├─ todayspl.html                                                                   
+│  │  │  ├─ updateorder.html                                                                
+│  │  │  ├─ update_product.html                                                             
+│  │  │  ├─ view_product.html                                                               
+│  │  │  └─ view_product1.html                                                              
+│  │  └─ password                                                                           
+│  │     ├─ password_reset.html                                                             
+│  │     ├─ password_reset_complete.html                                                    
+│  │     ├─ password_reset_confirm.html                                                     
+│  │     ├─ password_reset_done.html                                                        
+│  │     └─ password_reset_email.txt                                                        
+│  ├─ __pycache__                                                                           
+│  ├─ admin.py                                                                              
+│  ├─ apps.py                                                                               
+│  ├─ decorators.py                                                                         
+│  ├─ filters.py                                                                            
+│  ├─ forms.py                                                                              
+│  ├─ models.py                                                                             
+│  ├─ signals.py                                                                            
+│  ├─ tests.py                                                                              
+│  ├─ urls.py                                                                               
+│  ├─ utils.py                                                                              
+│  ├─ views.py                                                                              
+│  └─ __init__.py                                                                           
+├─ static                                                                                   
+│  ├─ css                                                                                   
+│  │  └─ main.css                                                                           
+│  ├─ images                                                                                
+│  │  ├─ arrow-down.png                                                                     
+│  │  ├─ arrow-up.png                                                                       
+│  │  ├─ banner.png                                                                         
+│  │  ├─ breakfast-2408818_640.png                                                          
+│  │  ├─ breakfast.png                                                                      
+│  │  ├─ cart.png                                                                           
+│  │  ├─ cook_dinner.png                                                                    
+│  │  ├─ dessert.png                                                                        
+│  │  ├─ dinner.png                                                                         
+│  │  ├─ food-with-ingredients.jpg                                                          
+│  │  ├─ fried-rice-3023040_640.png                                                         
+│  │  ├─ indian-1768906_640.jpg                                                             
+│  │  ├─ logo.jpg                                                                           
+│  │  ├─ lunch.png                                                                          
+│  │  ├─ lunch_item.jpg                                                                     
+│  │  ├─ pexels-buenosia-carol-674574.jpg                                                   
+│  │  ├─ pexels-ella-olsson-1640777.jpg                                                     
+│  │  ├─ pexels-erin-wang-1647163.jpg                                                       
+│  │  ├─ pexels-jenvit-keiwalinsarid-3559899.jpg                                            
+│  │  ├─ pexels-marvin-ozz-2474661.jpg                                                      
+│  │  ├─ pexels-nishant-aneja-2955819.jpg                                                   
+│  │  ├─ pexels-pixabay-209540.jpg                                                          
+│  │  ├─ pexels-shantanu-pal-2679501.jpg                                                    
+│  │  ├─ pexels-tyler-nix-2396220.jpg                                                       
+│  │  ├─ placeholder.png                                                                    
+│  │  ├─ spotlight_5.jpg                                                                    
+│  │  ├─ veg.jpg                                                                            
+│  │  ├─ vegetable-palau-3856048_640.jpg                                                    
+│  │  ├─ vegetable-palau-3856048_640_1.jpg                                                  
+│  │  └─ vegthali.jpg                                                                       
+│  └─ js                                                                                    
+│     └─ cart.js                                                                            
+├─ db.sqlite3                                                                               
+├─ manage.py                                                                                
+├─ READ ME.md                                                                               
+└─ requirements.txt                                                                         
